@@ -24,46 +24,56 @@
 
 		<form>
 			<input id="display" type="text" name="calculatrice" readonly>
+			<table>
+
+				<tr>
+					<td><input type="button" value="CE" onclick="c('')" /></td>
+				</tr>
+
+				<tr>
+					<td><input type="button" value="7" onclick="math('7')" /></td>
+					<td><input type="button" value="8" onclick="math('8')" /></td>
+					<td><input type="button" value="9" onclick="math('9')" /></td>
+					<td><input type="button" value="+" onclick="math('+')" /></td>
+				</tr>
+
+				<tr>
+					<td><input type="button" value="4" onclick="math('4')" /></td>
+					<td><input type="button" value="5" onclick="math('5')" /></td>
+					<td><input type="button" value="6" onclick="math('6')" /></td>
+					<td><input type="button" value="-" onclick="math('-')" /></td>
+				</tr>
+
+				<tr>
+					<td><input type="button" value="1" onclick="math('1')" /></td>
+					<td><input type="button" value="2" onclick="math('2')" /></td>
+					<td><input type="button" value="3" onclick="math('3')" /></td>
+					<td><input type="button" value="x" onclick="math('*')" /></td>
+				</tr>
+
+				<tr>
+					<td><input type="button" value="0" onclick="math('0')" /></td>
+					<td><input type="button" value="," onclick="math('.')" /></td>
+					<td><input type="button" value="=" onclick="egal()" /></td>
+					<td><input type="button" value="÷" onclick="math('/')" /></td>
+				</tr>
+			</table>
 		</form>
-		<table>
-			<tr>
-				<td><button type="button">CE</button></td>
-				<td><button type="button">←</button></td>
-				<td><button type="button" title="modulo">%</button></td>
-				<td><button type="button">+</button></td>
-			</tr>
-
-			<tr>
-				<td><button type="button">7</button></td>
-				<td><button type="button">8</button></td>
-				<td><button type="button">9</button></td>
-				<td><button type="button">-</button></td>
-			</tr>
-
-			<tr>
-				<td><button type="button">4</button></td>
-				<td><button type="button">5</button></td>
-				<td><button type="button">6</button></td>
-				<td><button type="button">×</button></td>
-			</tr>
-
-			<tr>
-				<td><button type="button">1</button></td>
-				<td><button type="button">2</button></td>
-				<td><button type="button">3</button></td>
-				<td><button type="button">÷</button></td>
-			</tr>
-
-			<tr>
-				<td><button type="button">0</button></td>
-				<td><button type="button">,</button></td>
-				<td></td>
-				<td><button type="button">=</button></td>
-			</tr>
-		</table>
 	</main>
 
-	<script></script>
+	<script>
+		var display = document.getElementById('display');
+		var c = function(value) {
+			display.value = value;
+		}
+		var math = function(value) {
+			display.value += value;
+		}
+		var egal = function() {
+			c(eval(display.value))
+		}
+
+	</script>
 
 </body>
 
