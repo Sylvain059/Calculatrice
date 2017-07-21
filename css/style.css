@@ -7,27 +7,30 @@ body {
 }
 
 #affichage {
+	border: 1px solid black;
+	border-radius: 5px;
 	height: 50px;
+	padding: 5px;
 	width: 275px;
-}
-
-form {
-	padding-bottom: 25px;
-}
-
-.calculatrice {
-	background-color: dodgerblue;
-	margin: auto;
-	padding: 15px;
-	width: 325px;
 }
 
 table {
 	margin: auto;
 }
 
-td input {
-	height: 50px;
+.button {
+	border: 1px solid black;
+	border-radius: 5px;
+	height: 55px;
 	margin: 5px;
-	width: 50px;
+	width: 55px;
+}
+
+.calculatrice {
+	background-color: steelblue;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin: auto;
+	padding: 10px;
+	width: 300px;
 }
