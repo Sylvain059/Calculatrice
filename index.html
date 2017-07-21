@@ -7,8 +7,13 @@
 	<title>Calculatrice JavaScript</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!--  FAVICON LINK  -->
+	<link rel="icon" type="image/png" href="favicon.png">
+
 	<!--  FONT LINK  -->
 	<link href="https://fonts.googleapis.com/css?family=Archivo+Black" rel="stylesheet">
+
 	<!--  LINK CSS  -->
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -23,54 +28,57 @@
 	<main class="container">
 
 		<form>
-			<input id="display" type="text" name="calculatrice" readonly>
-			<table>
+			<div class="calculatrice">
 
-				<tr>
-					<td><input type="button" value="CE" onclick="c('')" /></td>
-				</tr>
+				<input id="affichage" type="text" name="calculatrice" readonly>
+				<table>
 
-				<tr>
-					<td><input type="button" value="7" onclick="math('7')" /></td>
-					<td><input type="button" value="8" onclick="math('8')" /></td>
-					<td><input type="button" value="9" onclick="math('9')" /></td>
-					<td><input type="button" value="+" onclick="math('+')" /></td>
-				</tr>
+					<tr>
+						<td><input class="button" type="button" value="CE" onclick="clean('')" /></td>
+					</tr>
 
-				<tr>
-					<td><input type="button" value="4" onclick="math('4')" /></td>
-					<td><input type="button" value="5" onclick="math('5')" /></td>
-					<td><input type="button" value="6" onclick="math('6')" /></td>
-					<td><input type="button" value="-" onclick="math('-')" /></td>
-				</tr>
+					<tr>
+						<td><input class="button" type="button" value="7" onclick="math('7')" /></td>
+						<td><input class="button" type="button" value="8" onclick="math('8')" /></td>
+						<td><input class="button" type="button" value="9" onclick="math('9')" /></td>
+						<td><input class="button" type="button" value="+" onclick="math('+')" /></td>
+					</tr>
 
-				<tr>
-					<td><input type="button" value="1" onclick="math('1')" /></td>
-					<td><input type="button" value="2" onclick="math('2')" /></td>
-					<td><input type="button" value="3" onclick="math('3')" /></td>
-					<td><input type="button" value="x" onclick="math('*')" /></td>
-				</tr>
+					<tr>
+						<td><input class="button" type="button" value="4" onclick="math('4')" /></td>
+						<td><input class="button" type="button" value="5" onclick="math('5')" /></td>
+						<td><input class="button" type="button" value="6" onclick="math('6')" /></td>
+						<td><input class="button" type="button" value="-" onclick="math('-')" /></td>
+					</tr>
 
-				<tr>
-					<td><input type="button" value="0" onclick="math('0')" /></td>
-					<td><input type="button" value="," onclick="math('.')" /></td>
-					<td><input type="button" value="=" onclick="egal()" /></td>
-					<td><input type="button" value="÷" onclick="math('/')" /></td>
-				</tr>
-			</table>
+					<tr>
+						<td><input class="button" type="button" value="1" onclick="math('1')" /></td>
+						<td><input class="button" type="button" value="2" onclick="math('2')" /></td>
+						<td><input class="button" type="button" value="3" onclick="math('3')" /></td>
+						<td><input class="button" type="button" value="x" onclick="math('*')" /></td>
+					</tr>
+
+					<tr>
+						<td><input class="button" type="button" value="0" onclick="math('0')" /></td>
+						<td><input class="button" type="button" value="," onclick="math('.')" /></td>
+						<td><input class="button" type="button" value="=" onclick="egal()" /></td>
+						<td><input class="button" type="button" value="÷" onclick="math('/')" /></td>
+					</tr>
+				</table>
+			</div>
 		</form>
 	</main>
 
 	<script>
-		var display = document.getElementById('display');
-		var c = function(value) {
-			display.value = value;
+		var affichage = document.getElementById('affichage');
+		var clean = function(value) {
+			affichage.value = value;
 		}
 		var math = function(value) {
-			display.value += value;
+			affichage.value += value;
 		}
 		var egal = function() {
-			c(eval(display.value))
+			clean(eval(affichage.value))
 		}
 
 	</script>
